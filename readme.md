@@ -2,6 +2,7 @@
 Responder en README.md las preguntas de todos los temas e indicar las fuentes consultadas.
 
 Tema 1: ¿Qué es TypeScript?
+---------------------------------------------------------------------------
 ● ¿Qué es TypeScript y quién lo desarrolla?
 TypeScript es un lenguaje de programación de tipado estático gradual basado en JavaScript, para crear programas más confiables y mantenibles, detectando errores en tiempo de desarrollo, fue desarrollado por Anders Hejlsberg y lanzado inicialmente en 2012.
 
@@ -17,8 +18,9 @@ las ventajas que tiene son que gracias a su tipado, ayuda a mejorar la productiv
 
 ● ¿Cuál es su versión actual?
 su versión actual es TypeScript 7
----------------------------------------------------------------------------
+
 Tema 2: Crear y ejecutar un proyecto
+---------------------------------------------------------------------------
 ● ¿Cómo se instala TypeScript en un proyecto?
 se instala con el comando npm i -D typescript 
 
@@ -32,4 +34,24 @@ al ser el compilador, cuando es ejecutado verifica tipos y genera los .js en dis
 tsc: verifica los tipos y genera JavaScript, se lo llama “compilador”
 tsx: Genera JavaScript sin verificar sus tipos, tambien llamado “transpilador”
 node: solo borra las anotaciones de tipos, llamado Type stripping
+
+Tema 3: Tipos básicos
 ---------------------------------------------------------------------------
+● ¿Qué son los tipos string, number y boolean?
+string: Un string de TypeScript es un string de JavaScript con el tipo “string". Para interpolar, escribe un template literal: backticks con marcadores “${expression}”. Las comillas simples y dobles crean strings normales sin interpolación.
+
+number: JavaScript guarda todos los números como valores de coma flotante de 64 bits, así que TypeScript tiene un único tipo “number”. Los enteros son exactos hasta “Number.MAX_SAFE_INTEGER (2 ** 53 - 1)”. A partir de ahí, usa “bigint".
+
+boolean: boolean tiene exactamente dos valores,” true” y “false". Los valores que solo son “truthy (1, "yes")” no son booleanos, así que conviértelos con “Boolean(x) o x !== 0”. 
+
+● ¿Cómo se declara un array con tipo?
+Un tipo array en TypeScript es el tipo de los elementos seguido de “[ ]: string[ ]” es un array de strings,” number[ ]” un array de números. La forma genérica “Array<string>” es el mismo tipo. Una vez tipado el array, cada elemento que añades y cada elemento que lees tiene ese tipo. 
+
+● ¿Qué es un tipo unión?
+Un tipo unión enumera alternativas con “ | “ un valor de tipo “ string | number “ es o un string o un número. Las uniones son la forma en que TypeScript describe valores que pueden tener legítimamente más de una forma, y el compilador te obliga a comprobar cuál tienes antes de usar nada específico de ella. 
+
+● ¿Por qué se recomienda evitar any?
+se recomienda evitar any porque any te deja hacer cualquier cosa y no comprueba nada, acepta a ciegas. El compilador acepta errores, tipos incorrectos y propiedades que faltan, y los errores aparecen en tiempo de ejecución. Se revomienda solo usarlo en los siguientes casos:
+    ● Migrar un proyecto de JavaScript, donde any marca lo que todavía no está tipado.
+    ● Código que el sistema de tipos no puede expresar bien, pequeño y detrás de una firma de función tipada.
+    ● Código de tests que pasa datos incorrectos a propósito.
