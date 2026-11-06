@@ -1,4 +1,4 @@
-// Tema 1: ¿Qué es TypeScript? codigo
+// Tema 1: ¿Qué es TypeScript? /codigo
 
 interface User {
     name: string;
