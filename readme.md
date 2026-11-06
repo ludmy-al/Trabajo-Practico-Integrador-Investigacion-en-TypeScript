@@ -70,3 +70,17 @@ un parámetro opcional es darle un valor por defecto o tomar cualquier número d
 ● ¿Qué es un parámetro por defecto?
 un parámetro por defecto es un valor que logra que el parámetro sea opcional para quien llama, y le da un tipo sin “ undefined “  dentro de la función. El tipo se infiere a partir del valor por defecto, así que la anotación a menudo sobra. 
 
+Tema 5: Interfaces y type
+---------------------------------------------------------------------------
+● ¿Qué es una interfaz y para qué sirve? 
+Una interfaz es poner nombre a la forma de un objeto: las propiedades que debe tener y el tipo de cada una, sirve para ser declarada, usar el nombre como tipo, y el compilador comprueba contra ella cada objeto que pasamos, devolvemos o asignamos.
+
+● ¿Qué es un type?
+type es quien puede nombrar cosas que una interfaz no puede (uniones, tuplas, tipos calculados), 
+
+● ¿Cómo se declara una propiedad opcional?
+una propiedad opcional se declara con un “ ? “ después del nombre, hace opcional una propiedad: el objeto puede omitirla, y leerla, “ T | undefined. readonly” prohíbe reasignar la propiedad después de crear el objeto.
+
+● ¿Cuándo conviene usar cada uno?
+interface: es recomendable usarlo para estructuras de objetos y clases, sobre todo cuando se necesita extends
+type: es recomendable usarlo para uniones (|), intersecciones (&), tipos literales ("ADMIN" | "USER") y alias de primitivos
