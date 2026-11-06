@@ -17,3 +17,19 @@ las ventajas que tiene son que gracias a su tipado, ayuda a mejorar la productiv
 
 ● ¿Cuál es su versión actual?
 su versión actual es TypeScript 7
+---------------------------------------------------------------------------
+Tema 2: Crear y ejecutar un proyecto
+● ¿Cómo se instala TypeScript en un proyecto?
+se instala con el comando npm i -D typescript 
+
+● ¿Para qué sirve el archivo tsconfig.json?
+le indica a TypeScript que archivos forman parte del proyecto, que tan estricto debe ser al verificar los tipos y como generar el JavaScript, sin estos no sabe que compilar
+
+● ¿Qué hace el comando tsc?
+al ser el compilador, cuando es ejecutado verifica tipos y genera los .js en dist/
+
+● ¿Qué diferencia hay entre ejecutar un archivo con tsc, tsx y node?
+tsc: verifica los tipos y genera JavaScript, se lo llama “compilador”
+tsx: Genera JavaScript sin verificar sus tipos, tambien llamado “transpilador”
+node: solo borra las anotaciones de tipos, llamado Type stripping
+---------------------------------------------------------------------------
