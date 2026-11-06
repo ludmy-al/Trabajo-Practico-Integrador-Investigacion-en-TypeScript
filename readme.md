@@ -84,3 +84,19 @@ una propiedad opcional se declara con un “ ? “ después del nombre, hace opc
 ● ¿Cuándo conviene usar cada uno?
 interface: es recomendable usarlo para estructuras de objetos y clases, sobre todo cuando se necesita extends
 type: es recomendable usarlo para uniones (|), intersecciones (&), tipos literales ("ADMIN" | "USER") y alias de primitivos
+
+Tema 6: Enums y tipos literales
+---------------------------------------------------------------------------
+● ¿Qué es un enum?
+Un enum es un conjunto de constantes con nombre “enum Direction { Up, Down, Left, Right }” creando a la vez un tipo, “Direction”, y un objeto en tiempo de ejecución a cuyos miembros accedes como “Direction.Up”. Los miembros se numeran desde 0 salvo que les des valores, y los enums de string dan a cada miembro un string legible. 
+
+● ¿Qué es un tipo literal?
+Un tipo literal es un tipo con exactamente un valor: "up" es un tipo cuyo único miembro es el string "up", y un “404” es un tipo cuyo único miembro es el número 404. Por sí solos no son muy útiles. Unidos en una unión, te dan una variable que acepta un conjunto fijo de valores y nada más.
+
+● ¿En qué se parecen y en qué se diferencian?
+PARECIDOS: ambos sirven para definir un conjunto específico y restringido de valores, proporcionando seguridad de tipos en tiempo de compilación para prevenir errores como tipos o valores inválido, permitiendo que el compilador verifique que una variable solo acepte las opciones definidas.
+DIFERENCIAS: mientras que en enums se convierten en objetos reales en JavaScript, lo que permite operaciones en tiempo de ejecución como enumeración o mapeo inverso, los tipos literales son estrictamente estáticos; desapareciendo completamente durante la compilación a JavaScript 
+
+● ¿En qué situaciones se puede usar cada uno?
+tipo literal: se puede usar solo para cuando necesitas verificación de tipo
+Enum:  se puede usar para que el código externo del que dependes ya los utiliza. 
