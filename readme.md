@@ -55,3 +55,18 @@ se recomienda evitar any porque any te deja hacer cualquier cosa y no comprueba 
     ● Migrar un proyecto de JavaScript, donde any marca lo que todavía no está tipado.
     ● Código que el sistema de tipos no puede expresar bien, pequeño y detrás de una firma de función tipada.
     ● Código de tests que pasa datos incorrectos a propósito.
+
+Tema 4: Funciones
+---------------------------------------------------------------------------
+● ¿Cómo se indican los tipos de los parámetros?
+se escriben “name: Type” con “strict” que en TypeScript 7 un parametro sin anotación y sin contexto deel que inferir es un error.(ejemplo: “Parameter 'x' implicitly has an 'any' type”) 
+
+● ¿Cómo se indica el tipo de retorno?
+se indican por anotar o inferir, van despues de “function f(): Type” aunque es opcional, sin este TypeScript infiere el tipo aa partir de cada return del cuerpo. Una anotación vale la pena cuando la función se exporta, cuando tiene varios caminos de retorno o cuando es recursiva 
+
+● ¿Qué es un parámetro opcional?
+un parámetro opcional es darle un valor por defecto o tomar cualquier número de argumentos con un parámetro”  rest “. Incluye las reglas de orden, omitido frente a undefined, objetos de opciones y parámetros opcionales en tipos de función. Añadiendo un “ ? “ después del nombre de un parámetro, va a hacerlo opcional. Quien llama puede omitirlo, y dentro de la función su tipo incluye " undefined “. 
+
+● ¿Qué es un parámetro por defecto?
+un parámetro por defecto es un valor que logra que el parámetro sea opcional para quien llama, y le da un tipo sin “ undefined “  dentro de la función. El tipo se infiere a partir del valor por defecto, así que la anotación a menudo sobra. 
+
